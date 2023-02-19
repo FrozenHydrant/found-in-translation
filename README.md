@@ -1,2 +1,2 @@
 # found-in-translation
-Penguins
+Lose yourself and your meaning in letterforms.
