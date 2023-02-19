@@ -72,9 +72,9 @@ function drawStars() {
         }
 
         let activateButton = document.getElementById("translate-button");
-        console.log("" + mode + "Button.png");
-        activateButton.style.backgroundImage = "" + mode + "Button.png";
-        console.log(activateButton.style.backgroundImage);
+        //console.log("" + mode + "Button.png");
+        activateButton.style.backgroundImage = "url(" + mode + "Button.png)";
+        //console.log(activateButton.style.backgroundImage);
 
         prevMode = mode;
   }
