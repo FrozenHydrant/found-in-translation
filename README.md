@@ -1,5 +1,5 @@
 # found-in-translation
-Page here: https://frozenhydrant.github.io/found-in-translation/
+https://frozenhydrant.github.io/found-in-translation/ , made for Mountain Madness 2023.
 
 Lose yourself and your meaning in letterforms.
 
