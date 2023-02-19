@@ -1,40 +1,45 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Found In translator</title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
-        <script src="script.js"></script>
-    </head>
-<body onload="onLoad()">
-  <!--Header -->
-    <div class="header">
-      <a href="#"><img src="Logo.png" alt=""></a>
-    </div>
-  <!--Canvas-->
-  <canvas id="maincanvas" class="canvas"></canvas>
 
-  <!--Translator -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Found In translator</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+</head>
+
+<body onload="onLoad()">
+    <!--Header -->
+    <div class="header">
+        <a href="#"><img src="Logo.png" alt=""></a>
+    </div>
+    <!--Canvas-->
+    <canvas id="maincanvas" class="canvas"></canvas>
+    <!--Translator -->
     <div class="mainbox clearfix">
-      
-      <!--Target language-->
-        <div class = "choose-language">
-            <select id="select-language" class="select-language" name = "Select Languages" width = 100px>
+
+        <!--Target language-->
+        <div class="choose-language">
+            <select id="select-language" class="select-language" name="Select Languages" width=100px>
                 <option id="option-one" value="Emoji" selected> Emoji(Selected)</option>
                 <option id="option-two" value="Binary"><a href="binary.html">Binary</a></option>
                 <option id="option-three" value="Morse"><a href="Morse.html">Morse code</a></option>
             </select>
         </div>
+
         <div class="inputbox">
-          <h2><textarea id="textbox" rows="2" col="50"></textarea></h2>
-    	</div>
-    	<div class="outputbox">
-    		<h2><textarea id="displaybox" rows="2" col="50" disabled="disabled"></textarea></h2>
-    		<p></p>
-    	</div>
-    <!--Submit button -->
+            <h2><textarea id="textbox" rows="2" col="50"></textarea></h2>
+        </div>
+        <div class="outputbox">
+            <h2><textarea id="displaybox" rows="2" col="50" disabled="disabled"></textarea></h2>
+            <p></p>
+        </div>
+        <!--Submit button -->
         <div>
-            <button type="button" onclick="activate()" name="translate-button" id="translate-button"></button>
+            <button type="button" onclick="activate()" class="animated-button" name="translate-button"
+                id="translate-button"></button>
+            <button type="button" onclick="copy()" class="animated-button" name="copy-button"
+                id="copy-button">Copy</button>
         </div>
     </div>
 </body>
