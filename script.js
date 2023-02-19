@@ -9,7 +9,7 @@ let canvas, ctx, width, height, stars;
 let mode, languageSelect, prevMode;
 
 //text fields
-let textInput, textOutput;
+let textInput, textOutput, mainBox, translateButton, copyButton;
 
 //consts
 const EMOJIS = new Array("😄", "👍", "❤️", "😭", "🤣", "🥹");
@@ -135,14 +135,17 @@ function toBinary(num) {
 }
 
 //perform all canvas updates
-//this only includes drawStars for now
 function allUpdates() {
     drawStars();
+    //updateAllThings();
 }
 
 // Setup function
 function setup() {
     // Get canvas element and its context
+    mainBox = document.getElementById("mainbox");
+    translateButton = document.getElementById("translate-button");
+    copyButton = document.getElementById("copy-button");
     canvas = document.getElementById("maincanvas");
     ctx = canvas.getContext("2d");
 
@@ -150,23 +153,35 @@ function setup() {
     languageSelect = document.getElementById("select-language");
     textInput = document.getElementById("textbox");
     textOutput = document.getElementById("displaybox");
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-    console.log("SCREEN SIZE: " + width + " " + height)
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    //console.log("SCREEN SIZE: " + width + " " + height)
     stars = [];
 
     // Create stars as indicated by numStars
     for (var i = 0; i < numStars; i++) {
-        var x = Math.random() * width;
-        var y = Math.random() * height;
+        var x = Math.random() * canvas.width;
+        var y = Math.random() * canvas.height;
         stars.push(new Star(x, y));
     }
 }
 
+function updateAllThings() {
+    //resize the canvas
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    //textInput.style.height = (canvas.height * 0.5) + "px";
+    //textOutput.style.height = (canvas.height * 0.5) + "px";
+
+    //mainBox.style.height = (canvas.height * 0.75) + "px";
+
+    //translateButton.style.top = (canvas.height * 0.6) + "px";
+}
+
 // Draw function
 function drawStars() {
+    updateAllThings();
     // Set background color
     // to reset the canvas
     ctx.fillStyle = "white";
@@ -241,8 +256,8 @@ class Star {
         // Teleports back to right side if it goes out of the screen
         // It will get a random speed and location when doing so
         if (this.x < -64) {
-            this.x = width;
-            this.y = Math.random() * height;
+            this.x = canvas.width;
+            this.y = Math.random() * canvas.height;
             this.speed = Math.random() * 2 + 1;
         }
     }
